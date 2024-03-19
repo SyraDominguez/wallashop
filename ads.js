@@ -78,22 +78,17 @@ const ads = [
 const adsSection = document.querySelector('.advertisement-list');
 
 ads[0].initialProducts.forEach(ad => {
-  // Crear un elemento li para cada anuncio
   const adItem = document.createElement('li');
-  adItem.classList.add('advertisement-item'); // Añadir una clase para estilizar cada anuncio
-  adItem.classList.add('product-columns'); // Añadir la clase para la cuadrícula
+  adItem.classList.add('advertisement-item'); adItem.classList.add('product-columns');
 
-  // Crear el contenido HTML para cada anuncio utilizando los datos del objeto 'ad'
   adItem.innerHTML = `
-    <img src="public/images/${ad.photo}" alt="${ad.name}" class="ad-photo">
-    <div class="ad-details">
-      <h2>${ad.name}</h2>
-      <p>${ad.description}</p>
-      <p>${ad.price} €</p>
-      <p>${ad.sale ? 'For Sale' : 'Not For Sale'}</p>
-    </div>
-  `;
+  <img src="public/images/${ad.photo}" alt="${ad.name}" class="ad-photo">
+  <div class="ad-details">
+    <h2>${ad.name}</h2>
+    <p>${ad.price} €</p>
+    <p>${ad.sale ? 'For Sale' : 'Wanted'}</p>
+  </div>
+`;
 
-  // Agregar el anuncio al contenedor de la sección de anuncios
   adsList.appendChild(adItem);
 });
