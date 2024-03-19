@@ -9,6 +9,8 @@
         content="light dark" />
   <link rel="stylesheet"
         href="public/css/pico.css">
+  <link rel="stylesheet"
+        href="public/css/styles.css">
   <link rel="icon"
         type="image/png"
         sizes="96x96"
@@ -57,14 +59,17 @@
 
     <!-- Listado de anuncios -->
     <section class="advertisement-list">
-      <!-- Aquí se mostrarán los anuncios -->
-      <!-- Puedes usar bucles para generar los elementos de manera dinámica -->
+      <ul id="adsList"
+          class="product-columns"></ul>
     </section>
+
+    <script type="module"
+            src="ads.js"></script>
+
   </main>
 
   <footer>
-    <!-- Pie de página -->
-    <div class="container">
+    <div class="container_footer">
       <p>&copy; 2024 Wallashop. Todos los derechos reservados.</p>
     </div>
   </footer>
