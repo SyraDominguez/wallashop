@@ -1,22 +1,39 @@
-import { ads } from './ads-model.js';
-import { buildAds } from './ads-view.js';
-
-
+import { getAds } from './ads-model.js';
+import { buildAds, buildEmptyTweetList } from './ads-view.js';
 
 export function adsListController(adsSection) {
-  // CONTROLLER
+
   const showAdsButton = document.createElement('button');
   showAdsButton.textContent = 'Show New Ads';
   adsSection.appendChild(showAdsButton);
 
-  showAdsButton.addEventListener('click', () => {
-    ads[0].initialProducts.forEach(ad => {
-      const adItem = document.createElement('li');
-      adItem.classList.add('advertisement-item'); adItem.classList.add('product-columns');
+  showAdsButton.addEventListener('click', () => handleShowAdsButtonClicked(adsList))
+}
 
-      adItem.innerHTML = buildAds(ad)
+async function handleShowAdsButtonClicked(adsList) {
+  try {
+    const ads = await getAds();
+    if (ads.length === 0) {
+      renderEmptyAdsList(adsList);
+    } else {
+      renderAds(ads, adsList);
+    }
+  } catch (errorMessage) {
+    alert(errorMessage)
+  }
+}
 
-      adsList.appendChild(adItem);
-    });
+function renderAds(ads, adsList) {
+  ads.forEach(ad => {
+    const adItem = document.createElement('li');
+    adItem.classList.add('advertisement-item'); adItem.classList.add('product-columns');
+
+    adItem.innerHTML = buildAds(ad);
+
+    adsList.appendChild(adItem)
   })
+}
+
+function renderEmptyAdsList(adsList) {
+  adsList.innerHTML = buildEmptyTweetList();
 }

@@ -11,3 +11,7 @@ export function buildAds(ad) {
   </div>
 `
 }
+
+export function buildEmptyTweetList() {
+  return `<h3> Sorry, there are no sales yet </h3>`
+}
