@@ -41,6 +41,7 @@ button,
   object-fit: cover;
   border-radius: 3%;
   transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 
 .product-columns li:hover img {

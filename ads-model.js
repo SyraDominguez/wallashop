@@ -10,9 +10,7 @@ function parseAds(data) {
 
 export async function getAds() {
 
-  // const ads = [];
-
-  const url = 'https://fake-tweets-api-kc.vercel.app/posts';
+  const url = 'http://localhost:8000/api/products';
 
   let ads = [];
 
