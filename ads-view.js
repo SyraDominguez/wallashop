@@ -10,4 +10,4 @@ export function buildAds(ad) {
     <p>${ad.sale ? 'For Sale' : 'Wanted'}</p>
   </div>
 `
-};
+}
