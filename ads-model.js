@@ -1,4 +1,6 @@
-const ads = [
+// MODEL
+
+export const ads = [
   {
     "initialProducts": [
       {
@@ -71,24 +73,27 @@ const ads = [
           "lifestyle",
           "mobile"
         ]
+      },
+      {
+        "name": "Mercedes EQA",
+        "sale": false,
+        "price": 45000,
+        "photo": "mercedes.jpeg",
+        "tags": [
+          "work",
+          "motor"
+        ]
+      },
+      {
+        "name": "MiBand",
+        "sale": true,
+        "price": 35,
+        "photo": "miband.jpg",
+        "tags": [
+          "lifestyle",
+          "mobile"
+        ]
       }
     ]
   }
-]
-const adsSection = document.querySelector('.advertisement-list');
-
-ads[0].initialProducts.forEach(ad => {
-  const adItem = document.createElement('li');
-  adItem.classList.add('advertisement-item'); adItem.classList.add('product-columns');
-
-  adItem.innerHTML = `
-  <img src="public/images/${ad.photo}" alt="${ad.name}" class="ad-photo">
-  <div class="ad-details">
-    <h2>${ad.name}</h2>
-    <p>${ad.price} €</p>
-    <p>${ad.sale ? 'For Sale' : 'Wanted'}</p>
-  </div>
-`;
-
-  adsList.appendChild(adItem);
-});
+];
