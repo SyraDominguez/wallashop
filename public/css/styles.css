@@ -4,8 +4,21 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #13C1AC;
 }
+
+button,
+.search-button {
+  background-color: #13C1AC;
+}
+
+.search-input {
+  color: #13C1AC;
+}
+
+/* .menu-navbar li>a {
+  color: #13C1AC;
+} */
 
 
 /* Styles Products */
