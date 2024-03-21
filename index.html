@@ -5,16 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
+  <link rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href="images/app/Fav.jpeg" />
   <meta name="color-scheme"
         content="light dark" />
   <link rel="stylesheet"
         href="public/css/pico.css">
   <link rel="stylesheet"
         href="public/css/styles.css">
-  <link rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="images/app/Fav.jpeg" />
+  <link rel="stylesheet"
+        href="spinner.css">
   <title> Buy and Sell Second-Hand Items || Wallashop</title>
 </head>
 
@@ -50,17 +52,25 @@
 
   <main>
     <!-- Banner o sección destacada -->
-    <section class="banner">
+    <!-- <section class="banner">
       <h1>Welcome to Wallashop</h1>
       <p>Find Everything what you need</p>
-      <!-- <a href="#"
-         class="btn btn-primary">Explorar Ultimos Articulos Añadidos</a> -->
-    </section>
+      <a href="#"
+         class="btn btn-primary">Explorar Ultimos Articulos Añadidos</a>
+    </section> -->
 
     <!-- Listado de anuncios -->
     <section class="advertisement-list">
+
       <ul id="adsList"
-          class="product-columns"></ul>
+          class="product-columns">
+        <div class="loader hidden">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </ul>
     </section>
 
     <script type="module"

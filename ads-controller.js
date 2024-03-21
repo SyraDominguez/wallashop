@@ -11,15 +11,20 @@ export function adsListController(adsSection) {
 }
 
 async function handleShowAdsButtonClicked(adsList) {
+  const spinner = adsList.querySelector('.loader')
   try {
+    spinner.classList.toggle('hidden');
     const ads = await getAds();
     if (ads.length === 0) {
       renderEmptyAdsList(adsList);
     } else {
       renderAds(ads, adsList);
     }
+
   } catch (errorMessage) {
     alert(errorMessage)
+  } finally {
+    spinner.classList.toggle('hidden');
   }
 }
 
