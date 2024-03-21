@@ -1,4 +1,3 @@
-// VIEW
 
 export function buildAds(ad) {
   return `

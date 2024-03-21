@@ -1,4 +1,4 @@
-import { adsListController } from "./ads-controller.js";
+import { adsListController } from "./ads-list/ads-controller.js";
 
 const adsSection = document.querySelector('.advertisement-list');
 
