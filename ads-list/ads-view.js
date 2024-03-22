@@ -6,7 +6,7 @@ export function buildAds(ad) {
     <h2>${ad.name}</h2>
     <p>${ad.description}</p>
     <p>${ad.price} €</p>
-    <p>${ad.sale ? 'For Sale' : 'Wanted'}</p>
+    <p>${ad.sale ? 'Sell' : 'Buy'}</p>
   </div>
 `
 }

@@ -1,5 +1,15 @@
 import { adsListController } from "./ads-list/ads-controller.js";
+import { notificationController } from "./notification/notification-controller.js";
 
-const adsSection = document.querySelector('.advertisement-list');
+const notificationList = document.querySelector('.notification-list');
+const adsList = document.querySelector('.advertisement-list');
 
-adsListController(adsSection)
+const { showNotification } = notificationController(notificationList);
+
+adsList.addEventListener('error-loading-ads', (event) => {
+  showNotification(event.detail.message, event.detail.type)
+  event.stopPropagation();
+})
+
+adsListController(adsList);
+
