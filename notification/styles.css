@@ -1,12 +1,19 @@
 .notification {
-  border: solid 1px white;
+  border: solid 2px rgb(0, 0, 0);
   padding: 0.5rem;
+  border-radius: 15px;
+
+}
+
+.notification p {
+  color: black;
 }
 
 .notification.success {
-  background-color: lightblue;
+  background-color: #13C1AC;
+  color: black;
 }
 
 .notification.error {
-  background-color: lightcoral;
+  background-color: #b4f738;
 }

@@ -19,7 +19,7 @@ export async function getAds() {
     const data = await response.json();
     ads = parseAds(data);
   } catch (error) {
-    throw new Error('Error Loading Ads')
+    throw new Error(`<p>Error Loading Ads</p>`)
   }
 
   return ads;

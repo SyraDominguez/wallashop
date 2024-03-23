@@ -53,7 +53,8 @@ export function signupController(signupForm) {
 
     try {
       await createUser(email.value, password.value)
-      alert('User created successfully')
+      alert("User created successfully. Welcome! It's good that you are here!");
+
     } catch (error) {
       alert(error)
     }

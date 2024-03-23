@@ -1,3 +1,5 @@
+import { dispatchEvent } from '../utils/dispatchEvent.js';
+
 import { getAds } from './ads-model.js';
 import { buildAds, buildEmptyTweetList } from './ads-view.js';
 
@@ -27,21 +29,13 @@ async function handleShowAdsButtonClicked(adsList) {
     }
 
   } catch (errorMessage) {
-    dispatchErrorEvent(errorMessage, adsList)
-
+    dispatchEvent('error-loading-ads', {
+      message: errorMessage,
+      type: 'error'
+    }, adsList);
   } finally {
     spinner.classList.toggle('hidden');
   }
-}
-
-function dispatchErrorEvent(errorMessage, adsList) {
-  const event = new CustomEvent('error-loading-ads', {
-    detail: {
-      message: errorMessage,
-      type: 'error'
-    }
-  });
-  adsList.dispatchEvent(event);
 }
 
 function renderAds(ads, adsList) {
