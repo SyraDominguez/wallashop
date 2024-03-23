@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
@@ -8,18 +9,24 @@ a {
 }
 
 button,
+[type="button"],
+[type="submit"],
 .search-button {
   background-color: #13C1AC;
+  border-radius: 50px;
+
 }
 
 .search-input {
-  color: #13C1AC;
+  max-width: 90%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  outline: none;
+  margin: 0.5rem;
+
+
 }
-
-/* .menu-navbar li>a {
-  color: #13C1AC;
-} */
-
 
 /* Styles Products */
 
