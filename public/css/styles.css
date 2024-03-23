@@ -23,19 +23,46 @@ button,
 
 /* Styles Products */
 
-.product-columns {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-gap: 5px;
+.advertisement-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.product-columns li {
+.advertisement-item {
+  width: calc(25% - 9%);
+  margin: 0.2rem;
+}
+
+.ad-details {
   border: 2px solid #13C1AC;
   border-radius: 3%;
   padding: 10px;
 }
 
-.product-columns li img {
+
+.ad-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 3%;
+}
+
+.ad-details h2 {
+  font-size: 20px;
+}
+
+.ad-details h2,
+.ad-details p {
+  margin: 5px 0;
+}
+
+.product-columns {
+  display: grid;
+  grid-template-columns: 2fr 2fr / 2fr 2fr;
+  grid-gap: 5px;
+}
+
+
+.product-columns img {
   width: 350px;
   height: 350px;
   object-fit: cover;
@@ -44,10 +71,10 @@ button,
   margin: 0 auto;
 }
 
-.product-columns li:hover img {
-  transform: scale(1.02);
-
+.product-columns .ad-details:hover img {
+  transform: scale(1.01);
 }
+
 
 .overlay {
   position: fixed;
@@ -75,12 +102,6 @@ button,
   max-width: 90%;
   max-height: 90%;
 
-}
-
-.advertisement-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 /* FOOTER */

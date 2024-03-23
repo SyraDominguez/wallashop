@@ -1,13 +1,18 @@
 import { getAds } from './ads-model.js';
 import { buildAds, buildEmptyTweetList } from './ads-view.js';
 
-export function adsListController(adsSection) {
+export function adsListController(adsList) {
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('button-container');
 
   const showAdsButton = document.createElement('button');
   showAdsButton.textContent = 'Show New Ads';
-  adsSection.appendChild(showAdsButton);
+  buttonContainer.appendChild(showAdsButton);
 
-  showAdsButton.addEventListener('click', () => handleShowAdsButtonClicked(adsList))
+  const footer = document.querySelector('footer');
+  document.body.insertBefore(buttonContainer, footer);
+
+  showAdsButton.addEventListener('click', () => handleShowAdsButtonClicked(adsList));
 }
 
 async function handleShowAdsButtonClicked(adsList) {
@@ -23,7 +28,7 @@ async function handleShowAdsButtonClicked(adsList) {
 
   } catch (errorMessage) {
     dispatchErrorEvent(errorMessage, adsList)
-    // alert(errorMessage);
+
   } finally {
     spinner.classList.toggle('hidden');
   }
@@ -41,13 +46,14 @@ function dispatchErrorEvent(errorMessage, adsList) {
 
 function renderAds(ads, adsList) {
   ads.forEach(ad => {
-    const adItem = document.createElement('li');
-    adItem.classList.add('advertisement-item'); adItem.classList.add('product-columns');
+    const adItem = document.createElement('div');
+    adItem.classList.add('advertisement-item');
+    adItem.classList.add('product-columns');
 
     adItem.innerHTML = buildAds(ad);
 
-    adsList.appendChild(adItem)
-  })
+    adsList.appendChild(adItem);
+  });
 }
 
 function renderEmptyAdsList(adsList) {

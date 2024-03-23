@@ -1,8 +1,9 @@
-import { adsListController } from "./ads-list/ads-controller.js";
 import { notificationController } from "./notification/notification-controller.js";
+import { adsListController } from "./ads-list/ads-controller.js";
 
 const notificationList = document.querySelector('.notification-list');
 const adsList = document.querySelector('.advertisement-list');
+
 
 const { showNotification } = notificationController(notificationList);
 
