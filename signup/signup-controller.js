@@ -1,3 +1,4 @@
+import { dispatchEvent } from "../utils/dispatchEvent.js"
 import { createUser } from "./signup-model.js";
 
 export function signupController(signupForm) {
@@ -43,7 +44,10 @@ export function signupController(signupForm) {
 
   function showFormErrors(errors) {
     for (const error of errors) {
-      alert(error)
+      dispatchEvent('signup-notification', {
+        message: error,
+        type: 'error'
+      }, signupForm)
     }
   }
 
@@ -53,10 +57,19 @@ export function signupController(signupForm) {
 
     try {
       await createUser(email.value, password.value)
-      alert("User created successfully. Welcome! It's good that you are here!");
-
+      // alert("User created successfully. Welcome! It's good that you are here!");
+      dispatchEvent('signup-notification', {
+        message: ("User created successfully./n Welcome! It's good that you are here!"),
+        type: 'success'
+      }, signupForm)
+      setTimeout(() => {
+        window.location = './index.html';
+      }, 2000)
     } catch (error) {
-      alert(error)
+      dispatchEvent('signup-notification', {
+        message: error,
+        type: 'error'
+      }, signupForm)
     }
   }
 
