@@ -3,21 +3,7 @@ import { dispatchEvent } from '../utils/dispatchEvent.js';
 import { getAds } from './ads-model.js';
 import { buildAds, buildEmptyTweetList } from './ads-view.js';
 
-export function adsListController(adsList) {
-  const buttonContainer = document.createElement('div');
-  buttonContainer.classList.add('button-container');
-
-  const showAdsButton = document.createElement('button');
-  showAdsButton.textContent = 'Show New Ads';
-  buttonContainer.appendChild(showAdsButton);
-
-  const footer = document.querySelector('footer');
-  document.body.insertBefore(buttonContainer, footer);
-
-  showAdsButton.addEventListener('click', () => handleShowAdsButtonClicked(adsList));
-}
-
-async function handleShowAdsButtonClicked(adsList) {
+export async function adsListController(adsList) {
   const spinner = adsList.querySelector('.loader')
   try {
     spinner.classList.toggle('hidden');
