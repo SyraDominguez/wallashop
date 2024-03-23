@@ -116,6 +116,7 @@ button,
 .container_footer {
   width: 100%;
   text-align: center;
+  margin: 5%;
 }
 
 .container_footer p {
