@@ -14,3 +14,6 @@ adsList.addEventListener('error-loading-ads', (event) => {
 
 adsListController(adsList);
 
+window.addEventListener('offline', () => {
+  showNotification('You are offline', 'error')
+})
