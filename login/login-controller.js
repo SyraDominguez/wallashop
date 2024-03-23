@@ -1,10 +1,9 @@
-// import { loaderController } from "../loader/loader-controller.js";
-import { dispatchEvent } from "../utils/dispatchEvent.js";
+import { loaderController } from "../loader/loader-controller.js";
 import { loginUser } from "./login-model.js";
 
 export const loginController = (loginForm) => {
-  // const spinner = loginForm.querySelector('#loader');
-  // const { showLoader, hideLoader } = loaderController(spinner)
+  const spinner = loginForm.querySelector('#loader');
+  const { showLoader, hideLoader } = loaderController(spinner)
 
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -16,8 +15,7 @@ export const loginController = (loginForm) => {
 
     const { email, password } = getLoginData(loginForm);
     try {
-      // showLoader();
-      dispatchEvent('startLoginUser', null, loginForm)
+      showLoader();
       const jwt = await loginUser(email, password)
       alert("It's great to see you again");
       localStorage.setItem('token', jwt);
@@ -25,8 +23,7 @@ export const loginController = (loginForm) => {
     } catch (error) {
       alert(error)
     } finally {
-      // hideLoader()
-      dispatchEvent('finishLoginUser', null, loginForm)
+      hideLoader()
     }
   }
 
@@ -41,3 +38,4 @@ export const loginController = (loginForm) => {
     }
   }
 }
+
