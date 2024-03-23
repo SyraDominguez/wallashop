@@ -1,7 +1,14 @@
+import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../utils/dispatchEvent.js"
 import { createUser } from "./signup-model.js";
 
+
+
 export function signupController(signupForm) {
+
+  const spinner = signupForm.querySelector('#spinner');
+
+  const { showLoader, hideLoader } = loaderController(spinner)
 
   signupForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -56,10 +63,11 @@ export function signupController(signupForm) {
     const password = signupForm.querySelector('#password');
 
     try {
+      showLoader();
       await createUser(email.value, password.value)
-      // alert("User created successfully. Welcome! It's good that you are here!");
+
       dispatchEvent('signup-notification', {
-        message: ("User created successfully./n Welcome! It's good that you are here!"),
+        message: ("User created successfully. ✅  Welcome! It's good that you are here!"),
         type: 'success'
       }, signupForm)
       setTimeout(() => {
@@ -70,6 +78,8 @@ export function signupController(signupForm) {
         message: error,
         type: 'error'
       }, signupForm)
+    } finally {
+      hideLoader();
     }
   }
 
