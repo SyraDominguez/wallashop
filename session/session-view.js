@@ -8,5 +8,6 @@ export const buildSession = () => {
 }
 
 export const buildAuthenticateSession = () => {
-  return `<button> Close Session </button> <a href="./ad-creation.html">Create Ad</a>`;
+  return `<button class="button"> Close Session </button> 
+          <button class="button"> <a href="./ad-creation.html">Create Ad</a> </button>`;
 }
