@@ -4,6 +4,8 @@ export function buildAdDetails(ad) {
     ? `<p>♥️ ${ad.favorites} unit of person have saved this ad as a favorite</p>`
     : '♥️ No one has saved this ad as a favorite';
 
+  const categories = Array.isArray(ad.tags) ? ad.tags.join(', ') : '';
+
   return `
     <div class="single-ad-detail">
       <h4>${ad.name}</h4> 
@@ -13,9 +15,8 @@ export function buildAdDetails(ad) {
       <p><big>${ad.sale ? 'Sell' : 'Buy'}</big></p>
       <p>Price: ${ad.price} €</p>
       <br/>
-      <p><strong>Categories:</strong> ${ad.tags.join(', ')}</p>
+      <p><strong>Categories:</strong> ${categories}</p>
       <p>${favorites}</p>
     </div>
   `;
 }
-

@@ -7,6 +7,8 @@ export function adCreationController(adCreation) {
     const formData = new FormData(adCreation);
     const ad = Object.fromEntries(formData.entries());
 
+
+
     try {
       await adCreate(ad);
       alert('Ad created successfully!');
@@ -14,5 +16,8 @@ export function adCreationController(adCreation) {
     } catch (error) {
       alert(error)
     }
+
   });
+
+
 }
