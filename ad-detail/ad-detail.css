@@ -1,0 +1,20 @@
+.single-ad-detail {
+  border: solid 3px #13C1AC;
+  border-radius: 15px;
+  padding: 3%;
+  font-size: 20px;
+
+}
+
+h4 {
+  color: white;
+  font-size: 40px;
+  ;
+}
+
+.single-ad-detail img {
+  max-width: 100%;
+  align-items: center;
+  border: solid 1px #13C1AC;
+  border-radius: 2%;
+}

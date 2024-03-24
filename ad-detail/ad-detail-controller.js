@@ -10,11 +10,22 @@ export async function adDetailController(adDetail) {
     window.location.href = '/'
   }
 
+  goBackButton();
+
   try {
     const ad = await getAdDetail(adId);
-    adDetail.innerHTML = buildAdDetails(ad)
+    const container = adDetail.querySelector('#container');
+    container.innerHTML = buildAdDetails(ad)
   } catch (error) {
     alert(error)
   }
+
+  function goBackButton() {
+    const backButton = adDetail.querySelector('#goBack');
+    backButton.addEventListener('click', () => {
+      window.history.back();
+    })
+  }
+
 
 }

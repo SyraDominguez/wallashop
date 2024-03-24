@@ -6,7 +6,8 @@ function parseAd(ad) {
     sale: ad.sale,
     photo: ad.photo,
     tags: ad.tags,
-    id: ad.id
+    id: ad.id,
+    favorites: ad.favorites
   }
 }
 
