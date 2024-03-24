@@ -1,6 +1,11 @@
+import { notificationController } from "../notification/notification-controller.js";
 import { adCreate } from "./ad-creation-model.js";
 
 export function adCreationController(adCreation) {
+
+  const notificationContainer = document.getElementById('notificationContainer');
+  const notification = notificationController(notificationContainer);
+
   adCreation.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -11,13 +16,22 @@ export function adCreationController(adCreation) {
 
     try {
       await adCreate(ad);
-      alert('Ad created successfully!');
-      window.location.href = '/';
+      showSuccessNotification('Ad created successfully.');
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
     } catch (error) {
-      alert(error)
+      showErrorNotification(error);
     }
 
   });
 
+  function showSuccessNotification(message) {
+    notification.showNotification(message, 'success');
+  }
+
+  function showErrorNotification(message) {
+    notification.showNotification(message, 'error');
+  }
 
 }
