@@ -5,7 +5,9 @@ export const adCreate = async (ad) => {
   try {
     const response = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(ad),
+      body: JSON.stringify({
+        ...ad
+      }),
       headers: {
         'Content-type': 'application/json',
         'Authorization': `Bearer ${token}`

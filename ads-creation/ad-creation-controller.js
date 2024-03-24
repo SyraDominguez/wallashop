@@ -12,6 +12,10 @@ export function adCreationController(adCreation) {
     const formData = new FormData(adCreation);
     const ad = Object.fromEntries(formData.entries());
 
+    const selectedCategories = document.querySelectorAll('input[type="checkbox"]:checked');
+    const tags = Array.from(selectedCategories).map(checkbox => checkbox.value);
+    ad.tags = tags;
+
 
 
     try {

@@ -2,109 +2,104 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <title>Ad Creation</title>
-  <link rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="images/app/Fav.jpeg" />
-  <meta name="color-scheme"
-        content="light dark" />
-  <link rel="stylesheet"
-        href="public/css/pico.css">
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+	<title>Ad Creation</title>
+	<link rel="icon"
+				type="image/png"
+				sizes="96x96"
+				href="images/app/Fav.jpeg" />
+	<meta name="color-scheme"
+				content="light dark" />
+	<link rel="stylesheet"
+				href="public/css/pico.css">
 
-  <link rel="stylesheet"
-        href="public/css/styles.css">
-  <link rel="stylesheet"
-        href="spinner.css">
-  <link rel="stylesheet"
-        href="notification/styles.css">
+	<link rel="stylesheet"
+				href="public/css/styles.css">
+	<link rel="stylesheet"
+				href="spinner.css">
+	<link rel="stylesheet"
+				href="notification/styles.css">
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="images/app/logo-wallashop.png"
-           alt="Wallashop Logo">
-      <span></span>
-    </div>
-  </header>
+	<header>
+		<div class="logo">
+			<img src="images/app/logo-wallashop.png"
+					 alt="Wallashop Logo">
+			<span></span>
+		</div>
+	</header>
 
-  <h1>Ad Creation</h1>
+	<h1>Ad Creation</h1>
 
 
-  <form id="adCreation">
-    <div id="notificationContainer"></div>
+	<form id="adCreation">
+		<div id="notificationContainer"></div>
 
-    <input type="file"
-           name="photo"
-           accept="image/*">
+		<input type="file"
+					 name="photo"
+					 accept="image/*">
 
-    <input type="text"
-           name="name"
-           placeholder="Product Name"
-           required>
-    <textarea name="description"
-              placeholder="Ad Description"
-              required></textarea>
+		<input type="text"
+					 name="name"
+					 placeholder="Product Name"
+					 required>
+		<textarea name="description"
+							placeholder="Ad Description"
+							required></textarea>
 
-    <input type="number"
-           name="price"
-           placeholder="Price"
-           required>
+		<input type="number"
+					 name="price"
+					 placeholder="Price"
+					 required>
 
-    <p>Select Categories:</p>
-    <input type="checkbox"
-           id="lifestyle"
-           name="categories[]"
-           value="lifestyle">
-    <label for="lifestyle">Lifestyle</label><br><br>
-    <input type="checkbox"
-           id="work"
-           name="categories[]"
-           value="work">
-    <label for="work">Work</label><br><br>
-    <input type="checkbox"
-           id="home"
-           name="categories[]"
-           value="home">
-    <label for="home">Home</label><br><br>
-    <input type="checkbox"
-           id="mobile"
-           name="categories[]"
-           value="mobile">
-    <label for="mobile">Mobile</label><br><br>
-    <input type="checkbox"
-           id="motor"
-           name="categories[]"
-           value="motor">
-    <label for="motor">Motor</label><br><br>
-    <br />
-    <br />
-    <select name="operation"
-            required>
-      <option value=""
-              disabled
-              selected>Select one</option>
-      <option value="sell">Sell</option>
-      <option value="buy">Buy</option>
-    </select>
-    </select>
-    <br />
-    <button type="submit">Create Ad</button>
-  </form>
+		<p>Select Categories:</p>
+		<input type="checkbox"
+					 id="lifestyle"
+					 value="lifestyle">
+		<label for="lifestyle">Lifestyle</label><br><br>
+		<input type="checkbox"
+					 id="work"
+					 value="work">
+		<label for="work">Work</label><br><br>
+		<input type="checkbox"
+					 id="home"
+					 value="home">
+		<label for="home">Home</label><br><br>
+		<input type="checkbox"
+					 id="mobile"
+					 value="mobile">
+		<label for="mobile">Mobile</label><br><br>
+		<input type="checkbox"
+					 id="motor"
+					 value="motor">
+		<label for="motor">Motor</label><br><br>
+		<br />
+		<br />
+		<select name="operation"
+						required>
+			<option value=""
+							disabled
+							selected>Select one</option>
+			<option value="sell">Sell</option>
+			<option value="buy">Buy</option>
+		</select>
+		</select>
+		<br />
+		<button type="submit">Create Ad</button>
+	</form>
 
-  <br />
-  <br />
-  <a href="/">
-    <button id="goBack">Back</button>
-  </a>
+	<br />
+	<br />
+	<a href="/">
+		<button id="goBack">Back</button>
+	</a>
 
-  <script type="module"
-          src="ad-creation.js"></script>
+	<script type="module"
+					src="ad-creation.js"></script>
 </body>
 
 </html>
