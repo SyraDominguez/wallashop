@@ -1,3 +1,4 @@
+import { notificationController } from "../notification/notification-controller.js";
 import { deleteAd, getAdDetail, getUserData } from "./ad-detail-model.js";
 import { buildAdDetails } from "./ad-detail-view.js";
 
@@ -8,6 +9,7 @@ export async function adDetailController(adDetail) {
 
   if (!adId) {
     window.location.href = '/'
+    return;
   }
 
   goBackButton();
@@ -38,15 +40,15 @@ export async function adDetailController(adDetail) {
 
   async function removeAd(adId, token) {
     if (window.confirm('Are you sure you want to remove this ad?')) {
-
       try {
         await deleteAd(adId, token);
+        showSuccessNotification('Ad deleted successfully.');
         setTimeout(() => {
           window.location.href = '/';
-        }, 2000)
-
+        }, 2000);
       } catch (error) {
-        alert(error)
+        showErrorNotification(error);
+
       }
     }
   }
@@ -57,6 +59,19 @@ export async function adDetailController(adDetail) {
       window.history.back();
     })
   }
+
+  const notificationContainer = document.getElementById('notificationContainer');
+  const notification = notificationController(notificationContainer);
+
+
+  function showSuccessNotification(message) {
+    notification.showNotification(message, 'success');
+  }
+
+  function showErrorNotification(message) {
+    notification.showNotification(message, 'error');
+  }
+
 }
 
 
