@@ -5,6 +5,7 @@ function parseAds(data) {
     price: data.price,
     sale: data.sale,
     photo: data.photo,
+    id: data.id
   }))
 }
 

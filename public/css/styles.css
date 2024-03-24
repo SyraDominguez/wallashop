@@ -4,6 +4,8 @@ body {
 
 }
 
+h1,
+h2,
 a {
   color: #13C1AC;
 }
@@ -38,14 +40,21 @@ button,
 .advertisement-item {
   width: calc(25% - 9%);
   margin: 0.2rem;
+
+
 }
 
 .ad-details {
   border: 2px solid #13C1AC;
   border-radius: 3%;
   padding: 10px;
+  text-decoration: none;
+  height: 100%;
 }
 
+.ad-details+.ad-details {
+  margin-left: 1rem;
+}
 
 .ad-details img {
   width: 100%;
@@ -60,6 +69,7 @@ button,
 .ad-details h2,
 .ad-details p {
   margin: 5px 0;
+  color: whitesmoke
 }
 
 .product-columns {
@@ -109,6 +119,12 @@ button,
   max-width: 90%;
   max-height: 90%;
 
+}
+
+/* DETAILS PAGE */
+
+.single-details {
+  text-decoration: none;
 }
 
 /* FOOTER */
